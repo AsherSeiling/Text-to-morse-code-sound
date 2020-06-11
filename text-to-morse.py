@@ -108,7 +108,7 @@ def let_to_morse(letters):
         converted_words.append(y)
     elif letters.lower() == "z":
         converted_words.append(z)
-    
+
     elif letters.lower() == "1":
         converted_words.append(one)
     elif letters.lower() == "2":
@@ -129,10 +129,10 @@ def let_to_morse(letters):
         converted_words.append(nine)
     elif letters.lower() == "0":
         converted_words.append(zero)
-    
+
     elif letters.lower() == " ":
         converted_words.append(space)
-    
+
     elif letters.lower() == ".":
         converted_words.append("  ")
     else:
@@ -163,7 +163,7 @@ while loop_tf == True:
     # check to stop
     if times_ran == run_up_to - 1:
         loop_tf = False
-    
+
     time.sleep(.3)
     times_ran += 1
 
