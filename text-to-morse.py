@@ -1,12 +1,14 @@
 import time
-import pygame
+from playsound import playsound
 
 
-pygame.init()
+
+print("Seiling morse to sound converter v1.0")
+
 # Addresses for dot and dash
-dot = "Dot.wav"
+dot = "noise/Dot.wav"
 
-dash = "Dash.wav"
+dash = "noise/Dash.wav"
 
 converted_words = []
 
@@ -130,6 +132,11 @@ def let_to_morse(letters):
     
     elif letters.lower() == " ":
         converted_words.append(space)
+    
+    elif letters.lower() == ".":
+        converted_words.append("  ")
+    else:
+        print( letters + " Is not in morse code so it will not be included.")
 
 
 print("Input the words you want to convert to morse code.")
@@ -145,12 +152,10 @@ while loop_tf == True:
     time_char_be = .3
     for x in converted_words[times_ran]:
         if x == ".":
-            pygame.mixer.music.load(dot)
-            pygame.mixer.music.play()
+            playsound(dot)
             time.sleep(time_char_be)
         elif x == "-":
-            pygame.mixer.music.load(dash)
-            pygame.mixer.music.play()
+            playsound(dash)
             time.sleep(time_char_be)
         elif x == " ":
             time.sleep(.8)
@@ -159,5 +164,14 @@ while loop_tf == True:
     if times_ran == run_up_to - 1:
         loop_tf = False
     
-    time.sleep(.5)
+    time.sleep(.3)
     times_ran += 1
+
+print("Would you like to see the morse code(Y/N)")
+
+yn = input()
+if yn.lower() == "yes":
+    for y in converted_words:
+        print(y)
+else:
+    print("Thank you for using Seiling morse to sound converter")
