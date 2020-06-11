@@ -170,7 +170,7 @@ while loop_tf == True:
 print("Would you like to see the morse code(Y/N)")
 
 yn = input()
-if yn.lower() == "yes":
+if yn.lower() == "y":
     for y in converted_words:
         print(y)
 else:
